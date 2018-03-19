@@ -6,7 +6,7 @@
           <v-layout row>
             <v-flex>
               <div>
-                <div class="headline text-lg-left" mx-auto>Sudhanshu Siddh</div>
+                <div class="headline text-lg-left div-pointer" mx-auto @click="goToHome">Sudhanshu Siddh</div>
                 <div class="subheading role-text" mx-auto>Mobile Application Developer</div>
               </div>
             </v-flex>
@@ -25,7 +25,13 @@
         </v-list-tile>
       </v-list>
       <v-divider></v-divider>
-
+      <v-list>
+          <v-list-tile>
+              <v-list-tile-action v-for="social in socialLinks" :key="social.title">
+                <a :href="social.url" target="#" style="text-decoration: none;"><i :class="[social.icon, social.color]" style="font-size:1.75em; padding:8px;"></i></a>
+            </v-list-tile-action>
+          </v-list-tile>
+      </v-list>
     </v-navigation-drawer>
     <v-toolbar app :clipped-left="clipped" color="teal" dark v-if="title !== 'index'">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
@@ -33,12 +39,14 @@
     </v-toolbar>
     <v-content>
       <v-container>
-        <nuxt />
+        <transition name="fade" appear>
+          <nuxt />
+        </transition>
       </v-container>
     </v-content>
     <v-footer app>
       <span>Made with
-        <v-icon color="red">fas fa-heart</v-icon> using Vue Js</span>
+        <v-icon color="red">fas fa-heart</v-icon> using Vue Js, powered by Nuxt, Vuetify, Axios</span>
       <v-spacer></v-spacer>
       <span>&copy; 2018</span>
     </v-footer>
@@ -56,31 +64,31 @@
         items: [{
             icon: 'person_pin',
             title: 'About',
-            to: '/',
+            to: '/about',
             color: 'blue darken-4'
           },
           {
             icon: 'computer',
             title: 'Experience',
-            to: '/inspire',
+            to: '/experience',
             color: 'deep-purple darken-1'
           },
           {
             icon: 'widgets',
             title: 'Projects',
-            to: '/inspire',
+            to: '/projects',
             color: 'deep-orange lighten-1'
           },
           {
             icon: 'extension',
             title: 'Skills',
-            to: '/inspire',
+            to: '/skills',
             color: 'green darken-2'
           },
           {
             icon: 'school',
             title: 'Education',
-            to: '/inspire',
+            to: '/education',
             color: 'orange lighten-1'
           },
           {
@@ -90,11 +98,21 @@
             color: 'teal darken-1'
           },
         ],
+        socialLinks: [
+          { icon: 'fab fa-github', url: 'https://github.com/sudhanshu-15', title: 'github', color: 'social-github' },
+          { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/sudhanshu15/', title: 'linkedin', color: 'social-lnked-in' },
+          { icon: 'fab fa-twitter', url: 'https://twitter.com/sudhanshu0203', title: 'twitter', color: 'social-twitter' }
+        ]
       }
     },
     computed: {
       title() {
         return this.$route.name;
+      }
+    },
+    methods: {
+      goToHome() {
+        this.$router.push('/');
       }
     }
   }
@@ -104,6 +122,30 @@
 <style scoped>
   .role-text {
     color: #6D4C41;
+  }
+
+  .div-pointer {
+    cursor: pointer;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+  }
+  
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  }
+
+  .social-lnked-in {
+    color: #0077B5;
+  }
+
+  .social-twitter {
+    color: #00aced;
+  }
+
+  .social-github {
+    color: black;
   }
 
 </style>
