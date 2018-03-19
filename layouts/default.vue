@@ -6,7 +6,7 @@
           <v-layout row>
             <v-flex>
               <div>
-                <div class="headline text-lg-left" mx-auto>Sudhanshu Siddh</div>
+                <div class="headline text-lg-left div-pointer" mx-auto @click="goToHome">Sudhanshu Siddh</div>
                 <div class="subheading role-text" mx-auto>Mobile Application Developer</div>
               </div>
             </v-flex>
@@ -33,7 +33,9 @@
     </v-toolbar>
     <v-content>
       <v-container>
-        <nuxt />
+        <transition name="fade" appear>
+          <nuxt />
+        </transition>
       </v-container>
     </v-content>
     <v-footer app>
@@ -56,31 +58,31 @@
         items: [{
             icon: 'person_pin',
             title: 'About',
-            to: '/',
+            to: '/about',
             color: 'blue darken-4'
           },
           {
             icon: 'computer',
             title: 'Experience',
-            to: '/inspire',
+            to: '/experience',
             color: 'deep-purple darken-1'
           },
           {
             icon: 'widgets',
             title: 'Projects',
-            to: '/inspire',
+            to: '/projects',
             color: 'deep-orange lighten-1'
           },
           {
             icon: 'extension',
             title: 'Skills',
-            to: '/inspire',
+            to: '/skills',
             color: 'green darken-2'
           },
           {
             icon: 'school',
             title: 'Education',
-            to: '/inspire',
+            to: '/education',
             color: 'orange lighten-1'
           },
           {
@@ -96,6 +98,11 @@
       title() {
         return this.$route.name;
       }
+    },
+    methods: {
+      goToHome() {
+        this.$router.push('/');
+      }
     }
   }
 
@@ -104,6 +111,18 @@
 <style scoped>
   .role-text {
     color: #6D4C41;
+  }
+
+  .div-pointer {
+    cursor: pointer;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+  }
+  
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
   }
 
 </style>
