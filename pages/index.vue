@@ -1,5 +1,6 @@
 <template>
 <div class="layoutBackground">
+  <v-container fill-height>
   <v-layout column justify-center align-center>
     <v-flex>
       <div class="text-xs-center">
@@ -14,11 +15,12 @@
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="primary" flat nuxt to="/inspire">Continue</v-btn>
+            <v-btn color="primary" flat nuxt to="/about">About Me</v-btn>
           </v-card-actions>
         </v-card>
     </v-flex>
   </v-layout>
+  </v-container>
   </div>
 </template>
 

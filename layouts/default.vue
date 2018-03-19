@@ -25,7 +25,13 @@
         </v-list-tile>
       </v-list>
       <v-divider></v-divider>
-
+      <v-list>
+          <v-list-tile>
+              <v-list-tile-action v-for="social in socialLinks" :key="social.title">
+                <a :href="social.url" target="#" style="text-decoration: none;"><i :class="[social.icon, social.color]" style="font-size:1.75em; padding:8px;"></i></a>
+            </v-list-tile-action>
+          </v-list-tile>
+      </v-list>
     </v-navigation-drawer>
     <v-toolbar app :clipped-left="clipped" color="teal" dark v-if="title !== 'index'">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
@@ -40,7 +46,7 @@
     </v-content>
     <v-footer app>
       <span>Made with
-        <v-icon color="red">fas fa-heart</v-icon> using Vue Js</span>
+        <v-icon color="red">fas fa-heart</v-icon> using Vue Js, powered by Nuxt, Vuetify, Axios</span>
       <v-spacer></v-spacer>
       <span>&copy; 2018</span>
     </v-footer>
@@ -92,6 +98,11 @@
             color: 'teal darken-1'
           },
         ],
+        socialLinks: [
+          { icon: 'fab fa-github', url: 'https://github.com/sudhanshu-15', title: 'github', color: 'social-github' },
+          { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/sudhanshu15/', title: 'linkedin', color: 'social-lnked-in' },
+          { icon: 'fab fa-twitter', url: 'https://twitter.com/sudhanshu0203', title: 'twitter', color: 'social-twitter' }
+        ]
       }
     },
     computed: {
@@ -123,6 +134,18 @@
   
   .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+  }
+
+  .social-lnked-in {
+    color: #0077B5;
+  }
+
+  .social-twitter {
+    color: #00aced;
+  }
+
+  .social-github {
+    color: black;
   }
 
 </style>
