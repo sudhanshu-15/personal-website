@@ -1,9 +1,10 @@
 <template>
-  <v-container align-center justify-center wrap fluid>
+  <v-container>
             <blockquote v-if="aboutDetail.quote.length > 0">
                 {{aboutDetail.quote}}
+                <span v-if="aboutDetail.by.length > 0">{{aboutDetail.by}}</span>
             </blockquote>
-            <p class="text-xs-center headline">
+            <p class="text-md-left headline">
                 {{aboutDetail.text}}
             </p>
   </v-container>

@@ -16,7 +16,7 @@ export default {
       }
   },
   asyncData () {
-      return axios.get('https://personal-website-e3515.firebaseio.com/details.json')
+      return axios.get('/details.json')
       .then((res) => {
           return {aboutDetails: res.data.aboutDetails}
       })
