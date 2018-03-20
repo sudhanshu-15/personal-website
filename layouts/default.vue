@@ -45,7 +45,7 @@
       </v-container>
     </v-content>
     <v-footer app>
-      <span>Made with
+      <span>Handcrafted with
         <v-icon color="red">fas fa-heart</v-icon> using Vue Js, powered by Nuxt, Vuetify, Axios</span>
       <v-spacer></v-spacer>
       <span>&copy; 2018</span>
