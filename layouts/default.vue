@@ -55,6 +55,7 @@
 
 <script>
   export default {
+    scrollToTop: true,
     data() {
       return {
         clipped: false,

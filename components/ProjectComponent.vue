@@ -10,7 +10,7 @@
           <div>
             <h3 class="headline mb-0 text-xs-left">{{project.title}}</h3>
             <div class="text-xs-left">{{project.info}}</div>
-            <div class="caption text-xs-left">{{project.dates}}</div>
+            <div class="caption text-xs-left" style="font-style: italic;">{{project.dates}}</div>
             <span>
               <ul class="tags">
                 <li v-for="tag in project.tags"><a href="#" class="tag">{{tag}}</a></li>
@@ -19,9 +19,13 @@
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn flat><i class="fab fa-github" style="font-size:1.75em;"></i></v-btn>
-          <v-btn flat color="teal">Demo
+          <v-btn flat :href="project.github" target="#" v-if="project.github.length > 0">
+            <i class="fab fa-github" style="font-size:1.75em;"></i>
           </v-btn>
+          <v-btn flat color="teal" 
+            :href="project.demo" 
+            target="#" 
+            v-if="project.demo.length > 0">Demo</v-btn>
           <v-spacer></v-spacer>
           <v-btn flat @click.native="show = !show">
             {{ show ? 'Less' : 'More' }}
@@ -30,26 +34,9 @@
         </v-card-actions>
         <v-slide-y-transition>
           <v-card-text v-show="show">
-            <v-list>
-              <template v-for="item in project.contribution">
-              <v-list-tile>
-                <v-list-tile-avatar>
-                  <v-icon>keyboard_arrow_right</v-icon>
-                </v-list-tile-avatar>
-                <v-list-tile-content>
-                  <v-list-tile-title>
-                    <v-container wrap>
-                      <v-layout>
-                        <v-flex>
-                          {{item}}
-                        </v-flex>
-                      </v-layout>
-                    </v-container>
-                  </v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
-              </template>
-            </v-list>
+            <ul>
+              <li class="list text-xs-left" v-for="item in project.contribution">{{item}}</li>
+            </ul>
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
@@ -121,6 +108,11 @@ export default {
 
   .tag:hover::after {
     border-left-color: teal; 
+  }
+  .list {
+    list-style-type: disc;
+    position:relative;
+    margin-left: 1.0em;
   }
 </style>
 
