@@ -4,6 +4,7 @@
         <v-card-media
           :src="project.image"
           height="300px"
+          contain
         >
         </v-card-media>
         <v-card-title primary-title>
