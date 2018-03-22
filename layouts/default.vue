@@ -46,7 +46,7 @@
     </v-content>
     <v-footer app fixed>
       <span>Handcrafted with
-        <v-icon color="red">fas fa-heart</v-icon> using Vue Js, powered by Nuxt, Vuetify, Axios, Firebase</span>
+        <v-icon color="red">fas fa-heart</v-icon> using Vue Js; Powered by Nuxt, Vuetify, Axios, Firebase</span>
       <v-spacer></v-spacer>
       <span>&copy; 2018</span>
     </v-footer>
@@ -130,7 +130,7 @@
   }
 
   .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity 1s;
   }
   
   .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
