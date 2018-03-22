@@ -18,7 +18,6 @@
     asyncData () {
       return axios.get('/projects.json')
       .then((res) => {
-          console.log("Firebase Resp" + JSON.stringify(res.data.projectDetails));
           return {projectDetails: res.data.projectDetails}
       })
       .catch((e) => {
