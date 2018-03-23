@@ -44,7 +44,7 @@
         </transition>
       </v-container>
     </v-content>
-    <v-footer app fixed>
+    <v-footer app>
       <span>Handcrafted with
         <v-icon color="red">fas fa-heart</v-icon> using Vue Js; Powered by Nuxt, Vuetify, Axios, Firebase</span>
       <v-spacer></v-spacer>

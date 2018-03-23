@@ -1,5 +1,7 @@
 # ssiddh.me
 
+[![Build Status](https://travis-ci.org/sudhanshu-15/personal-website.svg?branch=master)](https://travis-ci.org/sudhanshu-15/personal-website)
+
 > Personal Website for Sudhanshu
 
 ## Build Setup
