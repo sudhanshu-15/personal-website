@@ -6,7 +6,7 @@
       <div class="text-xs-center">
       </div>
         <v-card>
-          <v-card-media class="white--text" src="https://firebasestorage.googleapis.com/v0/b/personal-website-e3515.appspot.com/o/index_image.jpg?alt=media&token=0aa2cad7-a502-454c-8427-baa99c60cd83" height="400px"></v-card-media>
+          <v-card-media class="white--text" src="https://firebasestorage.googleapis.com/v0/b/personal-website-e3515.appspot.com/o/main-pic.png?alt=media&token=cba4bb56-484a-491e-83e8-d631e4095839" height="400px"></v-card-media>
           <v-card-title class="display-1"><span>An <strong>Unorthodox</strong> Developer</span></v-card-title>
           <v-card-title class="headline">A Dreamer</v-card-title>
           <v-card-text>
