@@ -35,7 +35,7 @@
     </v-navigation-drawer>
     <v-toolbar app :clipped-left="clipped" color="teal" dark v-if="title !== 'index'">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title v-text="title === 'index' ? '' : title.toUpperCase() "></v-toolbar-title>
+      <v-toolbar-title v-text="title"></v-toolbar-title>
     </v-toolbar>
     <v-content>
       <v-container>
@@ -95,7 +95,7 @@
           {
             icon: 'description',
             title: 'Resume',
-            to: '/inspire',
+            to: '/resume',
             color: 'teal darken-1'
           },
         ],
@@ -108,7 +108,9 @@
     },
     computed: {
       title() {
-        return this.$route.name;
+        var titleName = this.$route.name;
+        if (titleName && titleName !== 'index') return titleName.toUpperCase();
+        else return '';
       }
     },
     methods: {
