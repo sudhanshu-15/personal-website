@@ -33,7 +33,7 @@
           </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar app :clipped-left="clipped" color="teal" dark v-if="title !== 'index'">
+    <v-toolbar fixed app :clipped-left="clipped" color="teal" dark v-if="title !== 'index'">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title v-text="title"></v-toolbar-title>
     </v-toolbar>
