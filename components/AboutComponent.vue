@@ -4,9 +4,11 @@
                 {{aboutDetail.quote}}
                 <span v-if="aboutDetail.by.length > 0">{{aboutDetail.by}}</span>
             </blockquote>
-            <p class="text-md-left headline">
+            <v-flex>
+              <p class="text-md-left headline">
                 {{aboutDetail.text}}
-            </p>
+              </p>
+            </v-flex>
   </v-container>
 </template>
 
@@ -17,8 +19,8 @@ export default {
 </script>
 
 <style scoped>
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
-blockquote{
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic); */
+/* blockquote{
   font-size: 1.4em;
   width:80%;
   margin:50px auto;
@@ -44,7 +46,7 @@ blockquote::before{
 
 blockquote::after{
   content: '';
-}
+}*/
 
 blockquote span{
   display:block;
@@ -53,6 +55,19 @@ blockquote span{
   font-weight: bold;
   margin-top:1em;
 }
+blockquote {
+	border-left: 5px solid #009688;
+	color: #000000;
+	font-size: 150%;
+	font-weight: 400;
+	margin: 20px 0;
+	padding-left: 1.5rem;
+}
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
 .container-background {
     background-image: url('https://firebasestorage.googleapis.com/v0/b/personal-website-e3515.appspot.com/o/gplaypattern_big.png?alt=media&token=da7cb917-3ccc-4f3a-8dc6-136dcbb23bfb');
     background-repeat: repeat;
