@@ -26,6 +26,16 @@
             message: 'Post not found'
           });
         })
+    },
+    head: {
+      title: 'Skills | ssiddh.me',
+      meta: [
+          {
+              hid: 'description',
+              name: 'description',
+              content: 'Skills Page of Sudhanshu Siddh'
+          }
+      ]
     }
   }
 </script>

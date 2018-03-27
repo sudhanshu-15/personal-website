@@ -28,6 +28,16 @@
             message: 'Post not found'
           });
         })
+    },
+    head: {
+      title: 'Projects | ssiddh.me',
+      meta: [
+          {
+              hid: 'description',
+              name: 'description',
+              content: 'Projects Page of Sudhanshu Siddh'
+          }
+      ]
     }
   }
 

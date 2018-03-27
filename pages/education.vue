@@ -27,6 +27,16 @@
             message: 'Post not found'
           });
         })
+    },
+    head: {
+      title: 'Education | ssiddh.me',
+      meta: [
+          {
+              hid: 'description',
+              name: 'description',
+              content: 'Education Page of Sudhanshu Siddh'
+          }
+      ]
     }
   }
 

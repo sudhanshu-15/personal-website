@@ -27,6 +27,16 @@
             message: 'Post not found'
           });
         })
+    },
+    head: {
+      title: 'Experience | ssiddh.me',
+      meta: [
+          {
+              hid: 'description',
+              name: 'description',
+              content: 'Experience Page of Sudhanshu Siddh'
+          }
+      ]
     }
   }
 
