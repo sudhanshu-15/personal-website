@@ -23,6 +23,16 @@ export default {
       .catch((e) => {
           error({ statusCode: 404, message: 'Post not found' });
       })
+  },
+  head: {
+      title: 'About page | ssiddh.me',
+      meta: [
+          {
+              hid: 'description',
+              name: 'description',
+              content: 'About Page of Sudhanshu Siddh'
+          }
+      ]
   }    
 }
 </script>

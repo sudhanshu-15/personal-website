@@ -32,7 +32,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'vuetify/src/stylus/main.styl'
+    'vuetify/dist/vuetify.min.css'
   ],
 
   /*
