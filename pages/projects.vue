@@ -5,22 +5,15 @@
         <app-project-component :project=project></app-project-component>
       </v-flex>
     </v-layout>
-    <back-to-top bottom="50px" right="50px" visibleOffset="200">
-      <span class="grey darken-3" style="display: flex; opacity:0.6;">
-        <v-icon x-large color="white">keyboard_arrow_up</v-icon>
-      </span>
-    </back-to-top>
   </v-container>
 </template>
 
 <script>
   import ProjectComponent from '@/components/ProjectComponent.vue';
   import axios from 'axios';
-  import BackToTop from 'vue-backtotop';
   export default {
     components: {
       'appProjectComponent': ProjectComponent,
-      BackToTop
     },
     asyncData() {
       return axios.get('/projects.json')
