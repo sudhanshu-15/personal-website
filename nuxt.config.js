@@ -40,7 +40,8 @@ module.exports = {
   */
   plugins: [
     '@/plugins/vuetify',
-    '@/plugins/axios'
+    '@/plugins/axios',
+    '@/plugins/sentry'
   ],
 
   /*
