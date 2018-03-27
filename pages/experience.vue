@@ -4,22 +4,15 @@
       <app-experience-component v-for="experience in experienceDetail" :key="experience.id" :experience="experience"></app-experience-component>
     </section>
     <!-- cd-timeline -->
-    <back-to-top bottom="50px" right="50px" visibleOffset="200">
-      <span class="grey darken-3" style="display: flex; opacity:0.6;">
-        <v-icon x-large color="white">keyboard_arrow_up</v-icon>
-      </span>
-    </back-to-top>
   </div>
 </template>
 
 <script>
   import ExperienceComponent from '@/components/ExperienceComponent.vue';
   import axios from 'axios';
-  import BackToTop from 'vue-backtotop';
   export default {
     components: {
       'appExperienceComponent': ExperienceComponent,
-      BackToTop
     },
     asyncData() {
       return axios.get('/experience.json')

@@ -26,11 +26,13 @@
       </v-list>
       <v-divider></v-divider>
       <v-list>
-          <v-list-tile>
-              <v-list-tile-action v-for="social in socialLinks" :key="social.title">
-                <a :href="social.url" target="#" style="text-decoration: none;"><i :class="[social.icon, social.color]" style="font-size:1.75em; padding:8px;"></i></a>
-            </v-list-tile-action>
-          </v-list-tile>
+        <v-list-tile>
+          <v-list-tile-action v-for="social in socialLinks" :key="social.title">
+            <a :href="social.url" target="#" style="text-decoration: none;">
+              <i :class="[social.icon, social.color]" style="font-size:1.75em; padding:8px;"></i>
+            </a>
+          </v-list-tile-action>
+        </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar fixed app :clipped-left="clipped" color="teal" dark v-if="title !== 'index'">
@@ -38,17 +40,22 @@
       <v-toolbar-title v-text="title"></v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <v-container>
+      <v-container v-scroll="onScroll">
         <transition name="fade" appear>
           <nuxt />
         </transition>
+        <v-btn class="backtotop" fab @click="scrollToTop" color="teal" v-if="scrolled">
+          <v-icon x-large color="white">keyboard_arrow_up</v-icon>
+        </v-btn>
       </v-container>
     </v-content>
-    <v-footer app>
-      <span>Handcrafted with
-        <v-icon color="red">fas fa-heart</v-icon> using Vue Js; Powered by Nuxt, Vuetify, Axios, Firebase</span>
-      <v-spacer></v-spacer>
-      <span>&copy; 2018</span>
+    <v-footer app inset>
+      <v-layout row justify-center>
+        <v-flex xs12 text-xs-center>
+          Handcrafted with
+          <v-icon color="red">fas fa-heart</v-icon> using Vue Js; Powered by Nuxt, Vuetify, Axios, Firebase
+        </v-flex>
+      </v-layout>
     </v-footer>
   </v-app>
 </template>
@@ -61,6 +68,7 @@
         clipped: false,
         drawer: true,
         permanent: true,
+        scrolled: false,
         largerIcons: true,
         items: [{
             icon: 'person_pin',
@@ -99,10 +107,24 @@
             color: 'teal darken-1'
           },
         ],
-        socialLinks: [
-          { icon: 'fab fa-github', url: 'https://github.com/sudhanshu-15', title: 'github', color: 'social-github' },
-          { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/sudhanshu15/', title: 'linkedin', color: 'social-lnked-in' },
-          { icon: 'fab fa-twitter', url: 'https://twitter.com/sudhanshu0203', title: 'twitter', color: 'social-twitter' }
+        socialLinks: [{
+            icon: 'fab fa-github',
+            url: 'https://github.com/sudhanshu-15',
+            title: 'github',
+            color: 'social-github'
+          },
+          {
+            icon: 'fab fa-linkedin-in',
+            url: 'https://www.linkedin.com/in/sudhanshu15/',
+            title: 'linkedin',
+            color: 'social-lnked-in'
+          },
+          {
+            icon: 'fab fa-twitter',
+            url: 'https://twitter.com/sudhanshu0203',
+            title: 'twitter',
+            color: 'social-twitter'
+          }
         ]
       }
     },
@@ -116,6 +138,12 @@
     methods: {
       goToHome() {
         this.$router.push('/');
+      },
+      onScroll(e) {
+        this.scrolled = window.pageYOffset > 100;
+      },
+      scrollToTop() {
+        this.$vuetify.goTo(0);
       }
     }
   }
@@ -131,12 +159,17 @@
     cursor: pointer;
   }
 
-  .fade-enter-active, .fade-leave-active {
-  transition: opacity 1s;
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 1s;
   }
-  
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+
+  .fade-enter,
+  .fade-leave-to
+  /* .fade-leave-active below version 2.1.8 */
+
+    {
+    opacity: 0;
   }
 
   .social-lnked-in {
@@ -149,6 +182,12 @@
 
   .social-github {
     color: black;
+  }
+
+  .backtotop {
+    bottom: 40px;
+    right: 50px;
+    position: fixed;
   }
 
 </style>

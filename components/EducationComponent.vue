@@ -11,11 +11,20 @@
           <h2 class="title" style="margin-left: 10px; margin-top:10px;">{{education.university}}</h2>
         </v-layout>
       </v-container>
-      <p class="caption">
-        {{education.location}}
+      <v-layout row justify-center>
+        <v-flex>
+          <p class="caption">
+            {{education.location}}
+          </p>
+        </v-flex>
         <v-spacer></v-spacer>
-        {{education.dates}}
-      </p>
+        <v-flex>
+          <p class="caption">
+            {{education.dates}}
+          </p>
+        </v-flex>
+      </v-layout>
+      
       <div class="timeline-content-info">
         <v-icon color="white">school</v-icon>
         <span class="timeline-content-info-title body-2">

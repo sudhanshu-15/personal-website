@@ -3,11 +3,6 @@
     <section id="cd-timeline" class="cd-container">
       <app-education-component v-for="education in educationDetail" :key="education.id" :education="education"></app-education-component>
     </section>
-    <back-to-top bottom="50px" right="50px" visibleOffset="200">
-      <span class="grey darken-3" style="display: flex; opacity:0.6;">
-        <v-icon x-large color="white">keyboard_arrow_up</v-icon>
-      </span>
-    </back-to-top>
     <!-- cd-timeline -->
   </div>
 </template>
@@ -15,11 +10,9 @@
 <script>
   import EducationComponent from '@/components/EducationComponent.vue';
   import axios from 'axios';
-  import BackToTop from 'vue-backtotop';
   export default {
     components: {
       'appEducationComponent': EducationComponent,
-      BackToTop
     },
     asyncData() {
       return axios.get('/education.json')

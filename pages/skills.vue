@@ -1,23 +1,16 @@
 <template>
   <div class="container-background">
     <app-skill-component v-for="skill in skillDetails" :key="skill.id" :skill="skill"></app-skill-component>
-     <iframe allowtransparency="true" frameborder="0" scrolling="no" seamless="seamless" src="http://colmdoyle.github.io/gh-activity/gh-activity.html?user=sudhanshu-15&type=user"
-      width="300" height="300"></iframe>
-    <back-to-top bottom="50px" right="50px" visibleOffset="200">
-      <span class="grey darken-3" style="display: flex; opacity:0.6;">
-        <v-icon x-large color="white">keyboard_arrow_up</v-icon>
-      </span>
-    </back-to-top>
+     <!-- <iframe allowtransparency="true" frameborder="0" scrolling="no" seamless="seamless" src="http://colmdoyle.github.io/gh-activity/gh-activity.html?user=sudhanshu-15&type=user"
+      width="300" height="300"></iframe> -->
   </div>
 </template>
 
 <script>
-  import BackToTop from 'vue-backtotop';
   import SkillComponent from '@/components/SkillComponent.vue'
   import axios from 'axios'
   export default {
     components: {
-      BackToTop,
       'appSkillComponent': SkillComponent
     },
     asyncData() {
