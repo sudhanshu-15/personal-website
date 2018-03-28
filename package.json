@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/google-analytics": "^2.0.2",
     "nuxt": "^1.0.0",
     "postcss-loader": "2.1.1",
     "raven-js": "^3.24.0",
