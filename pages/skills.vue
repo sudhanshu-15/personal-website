@@ -13,7 +13,7 @@
     components: {
       'appSkillComponent': SkillComponent
     },
-    asyncData() {
+    asyncData () {
       return axios.get('/skills.json')
         .then((res) => {
           return {
@@ -21,20 +21,20 @@
           }
         })
         .catch((e) => {
-          error({
+          this.$nuxt.error({
             statusCode: 404,
             message: 'Post not found'
-          });
+          })
         })
     },
     head: {
       title: 'Skills | ssiddh.me',
       meta: [
-          {
-              hid: 'description',
-              name: 'description',
-              content: 'Skills Page of Sudhanshu Siddh'
-          }
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Skills Page of Sudhanshu Siddh'
+        }
       ]
     }
   }

@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
     "@nuxtjs/google-analytics": "^2.0.2",
+    "eslint-plugin-html": "^4.0.2",
     "nuxt": "^1.0.0",
     "postcss-loader": "2.1.1",
     "raven-js": "^3.24.0",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "cross-env": "^5.0.1",
+    "standard": "^11.0.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "vue-particles": "^1.0.9"

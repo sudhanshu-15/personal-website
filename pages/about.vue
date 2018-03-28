@@ -5,35 +5,35 @@
 </template>
 
 <script>
-import AboutComponent from '@/components/AboutComponent.vue';
-import axios from 'axios';
+import AboutComponent from '@/components/AboutComponent.vue'
+import axios from 'axios'
 export default {
   components: {
-      'appAboutComponent': AboutComponent,
+    'appAboutComponent': AboutComponent
   },
-  data() {
-      return {
-      }
+  data () {
+    return {
+    }
   },
   asyncData () {
-      return axios.get('/details.json')
+    return axios.get('/details.json')
       .then((res) => {
-          return {aboutDetails: res.data.aboutDetails}
+        return {aboutDetails: res.data.aboutDetails}
       })
       .catch((e) => {
-          error({ statusCode: 404, message: 'Post not found' });
+        this.$nuxt.error({ statusCode: 404, message: 'Post not found' })
       })
   },
   head: {
-      title: 'About page | ssiddh.me',
-      meta: [
-          {
-              hid: 'description',
-              name: 'description',
-              content: 'About Page of Sudhanshu Siddh'
-          }
-      ]
-  }    
+    title: 'About page | ssiddh.me',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'About Page of Sudhanshu Siddh'
+      }
+    ]
+  }
 }
 </script>
 

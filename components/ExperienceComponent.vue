@@ -33,9 +33,8 @@
 
 <script>
   export default {
-      props:['experience']
+    props: ['experience']
   }
-
 </script>
 
 <style scoped>

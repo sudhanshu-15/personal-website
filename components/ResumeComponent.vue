@@ -13,11 +13,10 @@
     components: {
       pdf
     },
-    data() {
+    data () {
       return {
         url: 'https://www.dl.dropboxusercontent.com/s/t5ev5wz80vio9ix/Sudhanshu_March12018.pdf'
       }
     }
   }
-
 </script>

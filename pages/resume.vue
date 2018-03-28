@@ -6,7 +6,7 @@
 import ResumeComponent from '@/components/ResumeComponent.vue'
 export default {
   components: {
-      'appResumeComponent': ResumeComponent
+    'appResumeComponent': ResumeComponent
   }
 }
 </script>

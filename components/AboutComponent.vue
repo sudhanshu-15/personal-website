@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  props:['aboutDetail']
+  props: ['aboutDetail']
 }
 </script>
 

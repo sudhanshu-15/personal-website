@@ -63,7 +63,7 @@
 <script>
   export default {
     scrollToTop: true,
-    data() {
+    data () {
       return {
         clipped: false,
         drawer: true,
@@ -71,83 +71,82 @@
         scrolled: false,
         largerIcons: true,
         items: [{
-            icon: 'person_pin',
-            title: 'About',
-            to: '/about',
-            color: 'blue darken-4'
-          },
-          {
-            icon: 'computer',
-            title: 'Experience',
-            to: '/experience',
-            color: 'deep-purple darken-1'
-          },
-          {
-            icon: 'widgets',
-            title: 'Projects',
-            to: '/projects',
-            color: 'deep-orange lighten-1'
-          },
-          {
-            icon: 'extension',
-            title: 'Skills',
-            to: '/skills',
-            color: 'green darken-2'
-          },
-          {
-            icon: 'school',
-            title: 'Education',
-            to: '/education',
-            color: 'orange lighten-1'
-          },
-          {
-            icon: 'description',
-            title: 'Resume',
-            to: '/resume',
-            color: 'teal darken-1'
-          },
+          icon: 'person_pin',
+          title: 'About',
+          to: '/about',
+          color: 'blue darken-4'
+        },
+        {
+          icon: 'computer',
+          title: 'Experience',
+          to: '/experience',
+          color: 'deep-purple darken-1'
+        },
+        {
+          icon: 'widgets',
+          title: 'Projects',
+          to: '/projects',
+          color: 'deep-orange lighten-1'
+        },
+        {
+          icon: 'extension',
+          title: 'Skills',
+          to: '/skills',
+          color: 'green darken-2'
+        },
+        {
+          icon: 'school',
+          title: 'Education',
+          to: '/education',
+          color: 'orange lighten-1'
+        },
+        {
+          icon: 'description',
+          title: 'Resume',
+          to: '/resume',
+          color: 'teal darken-1'
+        }
         ],
         socialLinks: [{
-            icon: 'fab fa-github',
-            url: 'https://github.com/sudhanshu-15',
-            title: 'github',
-            color: 'social-github'
-          },
-          {
-            icon: 'fab fa-linkedin-in',
-            url: 'https://www.linkedin.com/in/sudhanshu15/',
-            title: 'linkedin',
-            color: 'social-lnked-in'
-          },
-          {
-            icon: 'fab fa-twitter',
-            url: 'https://twitter.com/sudhanshu0203',
-            title: 'twitter',
-            color: 'social-twitter'
-          }
+          icon: 'fab fa-github',
+          url: 'https://github.com/sudhanshu-15',
+          title: 'github',
+          color: 'social-github'
+        },
+        {
+          icon: 'fab fa-linkedin-in',
+          url: 'https://www.linkedin.com/in/sudhanshu15/',
+          title: 'linkedin',
+          color: 'social-lnked-in'
+        },
+        {
+          icon: 'fab fa-twitter',
+          url: 'https://twitter.com/sudhanshu0203',
+          title: 'twitter',
+          color: 'social-twitter'
+        }
         ]
       }
     },
     computed: {
-      title() {
-        var titleName = this.$route.name;
-        if (titleName && titleName !== 'index') return titleName.toUpperCase();
-        else return '';
+      title () {
+        var titleName = this.$route.name
+        if (titleName && titleName !== 'index') return titleName.toUpperCase()
+        else return ''
       }
     },
     methods: {
-      goToHome() {
-        this.$router.push('/');
+      goToHome () {
+        this.$router.push('/')
       },
-      onScroll(e) {
-        this.scrolled = window.pageYOffset > 100;
+      onScroll (e) {
+        this.scrolled = window.pageYOffset > 100
       },
-      scrollToTop() {
-        this.$vuetify.goTo(0);
+      scrollToTop () {
+        this.$vuetify.goTo(0)
       }
     }
   }
-
 </script>
 
 <style scoped>
