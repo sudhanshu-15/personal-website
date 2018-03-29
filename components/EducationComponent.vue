@@ -49,7 +49,6 @@
   export default {
     props: ['education']
   }
-
 </script>
 
 <style scoped>

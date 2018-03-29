@@ -46,10 +46,10 @@
 
 <script>
 export default {
-  props:['project'],
+  props: ['project'],
   data: () => ({
-      show: false
-    })
+    show: false
+  })
 }
 </script>
 

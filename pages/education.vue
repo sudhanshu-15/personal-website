@@ -8,13 +8,13 @@
 </template>
 
 <script>
-  import EducationComponent from '@/components/EducationComponent.vue';
-  import axios from 'axios';
-  export default {
+  import EducationComponent from '@/components/EducationComponent.vue'
+import axios from 'axios'
+export default {
     components: {
-      'appEducationComponent': EducationComponent,
+      'appEducationComponent': EducationComponent
     },
-    asyncData() {
+    asyncData () {
       return axios.get('/education.json')
         .then((res) => {
           return {
@@ -22,24 +22,23 @@
           }
         })
         .catch((e) => {
-          error({
+          this.$nuxt.error({
             statusCode: 404,
             message: 'Post not found'
-          });
+          })
         })
     },
     head: {
       title: 'Education | ssiddh.me',
       meta: [
-          {
-              hid: 'description',
-              name: 'description',
-              content: 'Education Page of Sudhanshu Siddh'
-          }
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Education Page of Sudhanshu Siddh'
+        }
       ]
     }
   }
-
 </script>
 
 <style scoped>

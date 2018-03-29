@@ -20,16 +20,16 @@
 <script>
   export default {
     props: ['skill'],
-    data() {
+    data () {
       return {
         interval: {},
         value: 0
       }
     },
-    beforeDestroy() {
+    beforeDestroy () {
       clearInterval(this.interval)
     },
-    mounted() {
+    mounted () {
       this.interval = setInterval(() => {
         if (this.value >= this.skill.value) {
           return
@@ -38,7 +38,6 @@
       }, 225)
     }
   }
-
 </script>
 <style scoped>
   .android {

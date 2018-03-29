@@ -9,13 +9,13 @@
 </template>
 
 <script>
-  import ProjectComponent from '@/components/ProjectComponent.vue';
-  import axios from 'axios';
-  export default {
+  import ProjectComponent from '@/components/ProjectComponent.vue'
+import axios from 'axios'
+export default {
     components: {
-      'appProjectComponent': ProjectComponent,
+      'appProjectComponent': ProjectComponent
     },
-    asyncData() {
+    asyncData () {
       return axios.get('/projects.json')
         .then((res) => {
           return {
@@ -23,24 +23,23 @@
           }
         })
         .catch((e) => {
-          error({
+          this.$nuxt.error({
             statusCode: 404,
             message: 'Post not found'
-          });
+          })
         })
     },
     head: {
       title: 'Projects | ssiddh.me',
       meta: [
-          {
-              hid: 'description',
-              name: 'description',
-              content: 'Projects Page of Sudhanshu Siddh'
-          }
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Projects Page of Sudhanshu Siddh'
+        }
       ]
     }
   }
-
 </script>
 
 <style scoped>
