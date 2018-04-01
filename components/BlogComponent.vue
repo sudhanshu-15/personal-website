@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{title}}</h1>
-    <embed-vue :gistId="5457605"></embed-vue>
+    <embed-vue :gistId="5457644" :showSpinner="true"></embed-vue>
   </div>
 </template>
 
