@@ -1,7 +1,7 @@
 <template>
     <div>
-        <app-blog-component :title="title"></app-blog-component>
-        <app-blog-component :title="slug"></app-blog-component>
+        <app-blog-component :blogDetail="blogDetail"></app-blog-component>
+        <app-blog-component :blogDetail="blogDetail"></app-blog-component>
     </div>
 </template>
 
@@ -22,9 +22,18 @@ export default {
       })
   },
   data() {
-      return {
-          slug: this.$route.params.slug
-      }
+    return {
+        slug: this.$route.params.slug,
+        blogDetail: {
+            quote: this.$route.params.slug,
+            by: 'Sudhanshu Siddh',
+            text: 'This is a temporary paragraph, blah blah, more text more text',
+            gistId: 5457644,
+            gistFileName: 'example-file2.html',
+            image: 'https://www.what-dog.net/Images/faces2/scroll001.jpg',
+            imageComment: 'Cute doggo'
+        }
+    }
   }
 }
 </script>
