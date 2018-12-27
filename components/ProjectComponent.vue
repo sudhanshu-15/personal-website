@@ -14,7 +14,14 @@
             <div class="caption text-xs-left" style="font-style: italic;">{{project.dates}}</div>
             <span>
               <ul class="tags">
-                <li v-for="tag in project.tags"><a href="#" class="tag">{{tag}}</a></li>
+                <li v-for="tag in project.tags">
+                  <v-chip color="teal" text-color="white">
+                    <v-avatar color="white" size=24>
+                      <v-icon small="true" color="teal">build</v-icon>
+                    </v-avatar>
+                    {{tag}}
+                  </v-chip>
+                </li>
               </ul>
             </span>
           </div>
