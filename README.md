@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/sudhanshu-15/personal-website.svg?branch=master)](https://travis-ci.org/sudhanshu-15/personal-website)
 
-> Personal Website for Sudhanshu
+> Personal Website for Sudhanshu Siddh
 
 ## Build Setup
 

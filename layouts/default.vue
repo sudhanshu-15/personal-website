@@ -131,7 +131,9 @@
     computed: {
       title () {
         var titleName = this.$route.name
-        if (titleName && titleName !== 'index') return titleName.toUpperCase()
+        if (titleName && titleName !== 'index') {
+          return titleName === 'slug' ? titleName = 'BLOG' : titleName.toUpperCase()
+        }
         else return ''
       }
     },

@@ -7,8 +7,8 @@
       </div>
         <v-card>
           <v-card-media class="white--text" src="https://firebasestorage.googleapis.com/v0/b/personal-website-e3515.appspot.com/o/main-pic.png?alt=media&token=e025356d-d624-4b85-af60-6ec3abedcc1b" height="400px"></v-card-media>
-          <v-card-title class="display-1"><span>An <strong>Unorthodox</strong> Developer</span></v-card-title>
-          <v-card-title class="headline">A Dreamer</v-card-title>
+          <v-card-title class="display-1"><span><strong>Mobile</strong> Developer</span></v-card-title>
+          <v-card-title class="headline">Android &#38; Flutter enthusiast</v-card-title>
           <v-card-text>
             <p class="title">Passionate about bringing a change through<br> 
               <em>mobile and pervasive technologies.</em></p>
